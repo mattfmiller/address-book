@@ -21,25 +21,24 @@ Address.prototype.fullAddress = function() {
 
 // user interface logic
 $(document).ready(function() {
-  $("form#new-contact").submit(function(event) {
-    event.preventDefault();
-
-    $("#add-address").click(function() {
-      $("#new-addresses").append('<div class="new-address">' +
-                                   '<div class="form-group">' +
-                                     '<label for="new-street">Street</label>' +
-                                     '<input type="text" class="form-control new-street">' +
-                                   '</div>' +
-                                   '<div class="form-group">' +
-                                     '<label for="new-city">City</label>' +
-                                     '<input type="text" class="form-control new-city">' +
-                                   '</div>' +
-                                   '<div class="form-group">' +
-                                     '<label for="new-state">State</label>' +
-                                     '<input type="text" class="form-control new-state">' +
-                                   '</div>' +
-                                 '</div>');
+  $("#add-address").click(function() {
+    $("#new-addresses").append('<div class="new-address">' +
+                                 '<div class="form-group">' +
+                                   '<label for="new-street">Street</label>' +
+                                   '<input type="text" class="form-control new-street">' +
+                                 '</div>' +
+                                 '<div class="form-group">' +
+                                   '<label for="new-city">City</label>' +
+                                   '<input type="text" class="form-control new-city">' +
+                                 '</div>' +
+                                 '<div class="form-group">' +
+                                   '<label for="new-state">State</label>' +
+                                   '<input type="text" class="form-control new-state">' +
+                                 '</div>' +
+                               '</div>');
     });
+
+  $("form#new-contact").submit(function(event) {
 
     var inputtedFirstName = $("input#new-first-name").val();
     var inputtedLastName = $("input#new-last-name").val();
@@ -72,5 +71,7 @@ $(document).ready(function() {
     $("input.new-street").val("");
     $("input.new-city").val("");
     $("input.new-state").val("");
+
+    event.preventDefault();
   });
 });
